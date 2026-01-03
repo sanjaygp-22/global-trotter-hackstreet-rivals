@@ -17,7 +17,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check for stored session
+    
     const storedUser = localStorage.getItem('globalTrotter_user');
     if (storedUser) {
       setUser(JSON.parse(storedUser));
@@ -26,7 +26,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }, []);
 
   const login = async (email: string, password: string) => {
-    // Simulate API call delay
+    
     await new Promise(resolve => setTimeout(resolve, 800));
     
     const foundUser = users.find(u => u.email === email && u.password === password);
@@ -43,13 +43,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const signup = async (name: string, email: string, password: string) => {
     await new Promise(resolve => setTimeout(resolve, 800));
     
-    // Check if user already exists
+    
     const existingUser = users.find(u => u.email === email);
     if (existingUser) {
       return { success: false, error: 'Email already registered' };
     }
     
-    // Create new user (in real app, this would be saved to database)
+    
     const newUser: User = {
       user_id: `usr_${Date.now()}`,
       name,
