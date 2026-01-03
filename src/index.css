@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* Global Trotter Design System
+   A travel-inspired palette with deep teal, warm coral, and clean whites
+*/
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --background: 40 33% 98%;
+    --foreground: 210 29% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 29% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 29% 15%;
+
+    /* Primary: Deep Teal */
+    --primary: 174 62% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Warm Coral */
+    --secondary: 12 76% 61%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 210 15% 45%;
+
+    /* Accent: Golden */
+    --accent: 38 92% 50%;
+    --accent-foreground: 210 29% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 174 62% 30%;
+
+    --radius: 0.75rem;
+
+    /* Custom Colors */
+    --success: 158 64% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 29% 15%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(174 62% 30%) 0%, hsl(174 62% 40%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(12 76% 61%) 0%, hsl(12 76% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(174 62% 25%) 0%, hsl(199 89% 35%) 50%, hsl(174 62% 35%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 33% 98%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(12 76% 61%) 0%, hsl(38 92% 50%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(210 29% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(210 29% 15% / 0.1), 0 2px 4px -2px hsl(210 29% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(210 29% 15% / 0.1), 0 4px 6px -4px hsl(210 29% 15% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(210 29% 15% / 0.1), 0 8px 10px -6px hsl(210 29% 15% / 0.1);
+    --shadow-glow: 0 0 20px hsl(174 62% 30% / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 29% 15%;
+    --sidebar-primary: 174 62% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 33% 96%;
+    --sidebar-accent-foreground: 210 29% 15%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 174 62% 30%;
+  }
+
+  .dark {
+    --background: 210 29% 10%;
+    --foreground: 40 33% 96%;
+
+    --card: 210 25% 14%;
+    --card-foreground: 40 33% 96%;
+
+    --popover: 210 25% 14%;
+    --popover-foreground: 40 33% 96%;
+
+    --primary: 174 62% 45%;
+    --primary-foreground: 210 29% 10%;
+
+    --secondary: 12 76% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 25% 20%;
+    --muted-foreground: 210 15% 65%;
+
+    --accent: 38 92% 55%;
+    --accent-foreground: 210 29% 10%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 25% 22%;
+    --input: 210 25% 22%;
+    --ring: 174 62% 45%;
+
+    --sidebar-background: 210 29% 12%;
+    --sidebar-foreground: 40 33% 96%;
+    --sidebar-primary: 174 62% 45%;
+    --sidebar-primary-foreground: 210 29% 10%;
+    --sidebar-accent: 210 25% 18%;
+    --sidebar-accent-foreground: 40 33% 96%;
+    --sidebar-border: 210 25% 20%;
+    --sidebar-ring: 174 62% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .text-gradient-hero {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-sunset {
+    background-image: var(--gradient-sunset);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-md;
+  }
+}
